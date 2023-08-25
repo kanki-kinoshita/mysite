@@ -1,0 +1,126 @@
+.text{
+	color:rgb(128, 128, 128);
+}
+
+input[type="number"] {
+ width: 30%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+   text-align: center;
+  margin: 8px 0;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  display: block;
+	margin: auto;
+
+	
+}
+
+input[type="text"]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+input[type="number"]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+textarea{
+	width: 50%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+   text-align: center;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  display: block;
+	margin: auto;
+}
+textarea:focus{
+	  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+select{
+	width: 30%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  display: block;
+	margin: auto;
+}
+select:focus{
+	border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+input[type="date"]{
+	width: 30%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  display: block;
+	margin: auto;
+}
+input[type="date"]:focus{
+	border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+button.btn_27 {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 150px;
+	margin: auto;
+	padding: 1rem 1rem;
+	color: #fff;
+	font-weight: bold;
+	background: #009879 ;
+	position: relative;
+	transition: 0.3s ease-in-out;
+}
+button.btn_27:hover {
+    background: #fff;
+    color: #009879 ;
+}
+button.btn_27:before, button.btn_27:after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+button.btn_27:before {
+  top: 0;
+  left: 0;
+}
+button.btn_27:after {
+  bottom: 0;
+  right: 0;
+}
+button.btn_27:hover:before, button.btn_27:hover:after {
+  width: 100%;
+  height: 100%;
+}
+button.btn_27:hover:before {
+  border-top-color: #009879 ;
+  border-right-color: #009879 ;
+  transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+button.btn_27:hover:after {
+  border-bottom-color: #009879 ;
+  border-left-color: #009879 ;
+  transition: border-color 0s ease-out 0.2s, width 0.15s ease-out 0.2s, height 0.15s ease-out 0.3s;
+}

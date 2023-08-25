@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>修正</title>
+<link rel="stylesheet" type="text/css" href="/css/edit.css">
+</head>
+<body>
+
+<header class="head" th:replace="header"></header>
+<form th:action="'/history/edit/'+${id}" method="post">
+<h1 class="text" align="center" >修正</h1>
+
+<!--<th>Id</th>
+<td th:text="${histories.id}"></td>
+</tr>  -->
+ <input type="date" name="date" th:value="${histories.date}"><select  name="categoryid" >
+    <option th:each="c:${category}" th:value="${c.id}" th:selected="${histories.categoryid==c.id}">[[${c.name}]]</option>
+</select>
+<input type="number" name="price" th:value="${histories.price}">
+<div align="center">
+<br><button class="btn_27">登録</button>
+</div>
+</form>
+</body>
+</html>

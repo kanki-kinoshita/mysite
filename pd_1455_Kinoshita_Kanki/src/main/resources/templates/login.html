@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ログイン</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+<form action="/login" method="post">
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">ログイン</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">会員登録</label>
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <div class="group">
+          <label for="user" class="label">メールアドレス</label>
+          <input id="user" name=email type="text" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">パスワード</label>
+          <input id="pass" type="password" name=password class="input" data-type="password">
+        </div>
+      
+        <div class="group">
+          
+         <br> <input type="submit" class="button" value="ログイン">
+          
+    
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <br><span th:text="${message}" class="msg"style="color:red   text-align: center;"></span>
+        </div>
+      </div>
+      </form>
+     
+      <form action="/regist" method="post">
+      <div class="sign-up-htm">
+        <div class="group">
+        <!--   <label for="user" class="label">name</label>
+          <input id="user" type="text"  name="name" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+       
+        <div class="group">
+          <label for="pass" class="label">Email Address</label>
+          <input id="pass" type="text"  name="email" class="input">
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign Up">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <label for="tab-1">Already Member?</a>
+          
+          -->
+         <label for="user" class="label">*名前</label>
+<input  id="user" type="text" name="name"  class="input" >
+
+    <label for="user" class="label">*Email</label>
+<input  id="user" type="text" name="email"  class="input" >
+
+<label for="user" class="label">*password</label>
+<input   id="user" type="text" name="password"  class="input">
+
+ <label for="user" class="label"></label>
+<input  id="user" type="hidden"   class="input" name="balance"   value="1000">
+<h4>目標予算</h4>
+<label for="user" class="label">*食費</label>
+<input  id="user" type="text"  class="input" name="tFoodCost" >
+
+<label for="user" class="label">*水道光熱費</label>
+<input  id="user" type="text" class="input" name="tUtCost">
+
+<label for="user" class="label">*家賃</label>
+<input  id="user" type="text"  class="input" name="tRentCost" >
+
+<label for="user" class="label">*交通費</label><input id="user" type="text"  class="input" name="tTransCost" >
+
+
+<label for="user" class="label">*通信費</label><input id="user" type="text" class="input" name="tComCost">
+
+<label for="user" class="label">*交際費</label><input id="user" type="text"  class="input" name="tEntCost" >
+
+
+
+
+   <br><span th:text="${message1}" class="msg"style="color:red   text-align: center;"></span>
+ <div class="group">
+         <br> <input type="submit" class="button" value="登録">
+        </div>
+        
+    
+
+</form>
+
+<!--  div class="login-page">
+  <div class="form">
+   <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+  <form action="/login" method="post">
+      <input type="text" name=email placeholder="メールアドレス"/>
+      <input type="password" name=password placeholder="password"/>
+  
+      <button>login</button>
+     
+    </form>
+    <span th:text="${message}" style="color:red"></span>
+    <br><a href="/regist">新規会員登録</a>
+  </div>
+</div> -->
+
+ 
+</body>
+</html>

@@ -1,0 +1,270 @@
+body{
+	  background:rgb(230, 230, 230);
+ 
+}
+header{
+	text-align: center;
+	background-color:#009879 ;
+	color:#EEEEEE;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+     margin:auto;
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+    }
+
+/*table{
+	background-image:url('pic/3.png');  
+ border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+
+  margin:auto;
+ 
+ 
+}
+table td{
+
+  text-align: center;
+  padding: 10px 0;
+   border-top:solid 1px #ddd;
+  border-right:solid 1px #ddd;
+  border-left:solid 1px #ddd;
+   border:solid 1px #ddd;
+  font-size: 100%;
+  width: 155px;
+}
+table th{
+	border-top:solid 1px #ddd;
+  border-right:solid 1px #ddd;
+  border-left:solid 1px #ddd;
+   border:solid 1px #ddd;
+}
+.date{
+	font-size: 100%;
+}*/
+
+h2{
+	text-align: center;
+}
+
+hello{
+	font-weight:700 ;
+
+}
+
+menu{
+	 width: 200px;
+    margin: auto;
+}
+
+
+
+.contents__ul{
+	text-align: center;
+	 display: flex;
+	 justify-content: center;
+     padding:0;
+    margin: 0;
+    list-style: none;
+  
+   
+     
+   
+}
+.contents__li_2{
+	 padding: 8px 25px;
+}
+.contents__li{
+	 padding: 8px 25px;
+}
+.contents__li_3{
+	 padding: 8px 25px;
+}
+
+.contents__li_4{
+	 padding: 8px 25px;
+}
+
+.income{
+	color:rgb(0, 128, 255);
+}
+
+.outcome{
+	color:rgb(255, 0, 128);
+}
+/*a{
+	color:rgb(255, 255, 255);
+	
+}*/
+
+.cp_link {
+	position: relative;
+	padding: 0.1em 0.3em;
+	display: inline-block;
+	transition: .3s;
+	color: rgb(255, 255, 255);
+	 
+  text-decoration: none;
+
+}
+.cp_link::before,
+.cp_link::after {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: rgb(255, 255, 255);
+	transition: .3s;
+}
+.cp_link::before {
+	top: 0;
+	left: 0;
+}
+.cp_link::after {
+	bottom: 0;
+	right: 0;
+}
+.cp_link:hover::before,
+.cp_link:hover::after {
+	width: 100%;
+}
+
+
+
+#flip2 { position: relative; right: 614px; bottom:123px;  display: block;}
+#flip2 li ul {
+  visibility: hidden;
+  perspective: 400px;
+}
+#flip2 li:hover ul{
+  visibility: visible;
+}
+#flip2 ul li{
+  transform: rotateY(90deg);
+  transform-origin: 50% 0;
+  transition: .3s;
+}
+#flip2 li:hover li{
+  transform: rotateY(0);
+}
+#flip2 ul li:nth-child(2) {
+  transition-delay: .1s;
+}
+#flip2 ul li:nth-child(3) {
+  transition-delay: .2s;
+}
+#flip2 ul li:nth-child(4) {
+  transition-delay: .3s;
+}
+#flip2 ul li:nth-child(5) {
+  transition-delay: .4s;
+}
+body { padding-bottom: 300px; }
+h3{ clear: both; padding: 50px 0 0; color: #333; text-align: center; }
+.clear:before, .clear:after { content: ""; display: table; }
+.clear:after { clear: both; }
+.clear { *zoom: 1; }
+
+.dropmenu{
+  *zoom: 1;
+  list-style-type: none;
+  width: 660px;
+  margin: 5px auto 30px;
+  padding: 0;
+}
+.dropmenu:before, .dropmenu:after{
+  content: "";
+  display: table;
+}
+.dropmenu:after{
+  clear: both;
+}
+.dropmenu li{
+  position: relative;
+  width: 20%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.dropmenu li a{
+  display: block;
+  margin: 0;
+  padding: 15px 0 11px;
+  background:transparent;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+}
+.dropmenu li ul{
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+.dropmenu li ul li{
+  width: 100%;
+}
+.dropmenu li ul li a{
+  padding: 13px 15px;
+  border-top: 1px solid #009879;
+  background:#009879;
+  text-align: left;
+}
+.dropmenu li:hover > a{
+  background: #2B6442;
+}
+.dropmenu li a:hover{
+  background:#2B6442;
+}
+
+
+
+
+
+
+
+
+
+.wf-mplus1p { font-family: "Sawarabi Mincho"; }
+
+

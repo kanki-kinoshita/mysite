@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>支出入力</title>
+<link rel="stylesheet" type="text/css" href="/css/outcome.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+<body>
+<header th:replace="header2"></header>
+<div class="h1">
+<h1 align="center" >収入入力</h1>
+</div>
+
+<form action="/incomeRegist" method="post">
+<table>
+<tr>
+<td class="money" align="right" >金額</td><td><input  type="number" name="price" id="price">
+
+<br> <label class="open" for="pop-up">
+   <span class="icon is-small">
+     <i class="fa fa-calculator"></i>
+    </span>
+ </label>
+<input type="checkbox" id="pop-up">
+<div class="overlay">
+	<div class="window">
+		<label class="close" for="pop-up">×</label>	
+			<table border="1">
+		<tr>
+			<td colspan="4" id="disp">0</td>
+		</tr>
+		<tr>
+			<td  ><button id="btn1">1</button></td>
+			<td><button id="btn2">2</button></td>
+			<td><button id="btn3">3</button></td>
+			<td><button id="btn_add">+</button></td>
+		</tr>
+		<tr>
+			<td><button id="btn4">4</button></td>
+			<td><button id="btn5">5</button></td>
+			<td><button id="btn6">6</button></td>
+			<td><button id="btn_sub">-</button></td>
+		</tr>
+		<tr>
+			<td><button id="btn7">7</button></td>
+			<td><button id="btn8">8</button></td>
+			<td><button id="btn9">9</button></td>
+			<td><button id="btn_div">/</button></td>
+		</tr>
+		<tr>
+			<td><button id="btn0">0</button></td>
+			<td><button id="btnC">C</button></td>
+			<td><button id="btn_mul">*</button></td>
+			<td><button id="btn_equ">=</button></td>
+		</tr>
+	</table>
+	<script>
+		// ボタンを押下した場合に呼び出される関数
+		function clickBtn(value) {
+			event.preventDefault();
+			// 表示部分のDOMオブジェクトを取得する
+			let disp = document.querySelector("#disp");
+		
+
+			if ("=" == value) {
+				// イコールボタンだったとき
+				disp.innerHTML = eval(disp.innerHTML); // 一例です。eval関数を使わなくてもOK
+				let price = document.querySelector("#price");
+				price.value=disp.innerHTML;
+				
+			} else if ("C" == value) {
+				disp.innerHTML = 0;
+			} else {
+				// イコール以外のボタンだったとき
+				if ("0" == disp.innerHTML) {
+					// 初期表示（0）だったら数字を置き換える
+					disp.innerHTML = value;//押されたボタンを表示する。
+				} else {
+					// 表示されている文字列にボタンの値の文字をつなげる
+					disp.innerHTML += value; //　別の書き方　	=disp.innerHtml+value
+				}
+			}
+		}
+
+		// ボタンのイベントハンドラを登録
+		document.querySelector("#btn1").addEventListener("click", function() {clickBtn("1")});
+		document.querySelector("#btn2").addEventListener("click", function() {clickBtn("2")});
+		document.querySelector("#btn3").addEventListener("click", function() {clickBtn("3")});
+		document.querySelector("#btn4").addEventListener("click", function() {clickBtn("4")});
+		document.querySelector("#btn5").addEventListener("click", function() {clickBtn("5")});
+		document.querySelector("#btn6").addEventListener("click", function() {clickBtn("6")});
+		document.querySelector("#btn7").addEventListener("click", function() {clickBtn("7")});
+		document.querySelector("#btn8").addEventListener("click", function() {clickBtn("8")});
+		document.querySelector("#btn9").addEventListener("click", function() {clickBtn("9")});
+		document.querySelector("#btn0").addEventListener("click", function() {clickBtn("0")});
+		document.querySelector("#btnC").addEventListener("click", function() {clickBtn("C")});
+		document.querySelector("#btn_add").addEventListener("click", function() {clickBtn("+")});
+		document.querySelector("#btn_sub").addEventListener("click", function() {clickBtn("-")});
+		document.querySelector("#btn_div").addEventListener("click", function() {clickBtn("/")});
+		document.querySelector("#btn_mul").addEventListener("click", function() {clickBtn("*")});
+		document.querySelector("#btn_equ").addEventListener("click", function() {clickBtn("=")});
+	</script>
+		
+		
+	
+	</div>
+</div></td>
+</tr>
+<tr>
+<td class="cate" align="right">カテゴリ名</td><td><select  name="categoryid" >
+    <option th:value="1">給料</option>
+    <option th:value="2">ボーナス</option>
+    <option th:value="3">その他</option>
+
+</select></td>
+</tr>
+<tr>
+<td class="day" align="right">日付</td><td><input  type="date" name="date"></td>
+</tr>
+<tr>
+<td class="memo" align="right">メモ</td><td><textarea name="memo" rows="" cols=""></textarea></td>
+</tr>
+</table>
+<div align="center">
+<br><button class="btn_27">登録</button>
+</div>
+</form>
+</body>
+</html>

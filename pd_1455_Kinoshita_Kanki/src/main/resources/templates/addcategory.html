@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>支出項目追加</title>
+<style>
+.add{
+	text-align:center;
+}
+
+input[type="text"] {
+  width: 10em;
+  border: 2px solid #aaa;
+   margin: 8px 0;
+  border-radius: 4px;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  transform: translate(1px)
+  
+
+	
+}
+
+input[type="text"]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+button.btn_27 {
+	display: block;
+	text-align: center;
+
+	text-decoration: none;
+	width: 100px;
+
+	padding: 0.4rem 0.8rem;
+	color: #fff;
+	font-weight: bold;
+	background: #009879 ;
+	position: relative;
+	transition: 0.3s ease-in-out;
+}
+button.btn_27:hover {
+    background: #fff;
+    color: #009879 ;
+}
+button.btn_27:before, button.btn_27:after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+button.btn_27:before {
+  top: 0;
+  left: 0;
+}
+button.btn_27:after {
+  bottom: 0;
+  right: 0;
+}
+button.btn_27:hover:before, button.btn_27:hover:after {
+  width: 100%;
+  height: 100%;
+}
+button.btn_27:hover:before {
+  border-top-color: #009879 ;
+  border-right-color: #009879 ;
+  transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+button.btn_27:hover:after {
+  border-bottom-color: #009879 ;
+  border-left-color: #009879 ;
+  transition: border-color 0s ease-out 0.2s, width 0.15s ease-out 0.2s, height 0.15s ease-out 0.3s;
+}
+</style>
+</head>
+<body>
+<header th:replace="header2"></header>
+<form action="/addcategory" method="post">
+<div class="add">
+新規追加項目:<input type="text" name="categoryname" autocomplete="off" >
+
+</div>
+<div align="center">
+<br><button class="btn_27">追加</button>
+</div>
+</form>
+</body>
+</html>

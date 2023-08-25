@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>top</title>
+<link rel="stylesheet" type="text/css" href="/css/topStyle.css">
+<link rel="stylesheet" href="https://fontawesome.com/v5/icons/pen?f=classic&s=solid">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+
+<style>
+.glaf{
+	margin:0 auto;
+	display:flex;
+}
+</style>
+ 
+</head>
+<body class="wf-mplus1p">
+
+ 
+  
+<header>
+<h1>家計簿</h1>
+<br>
+ <a  href="/outcomeRegist"  class="cp_link">支出入力</a>
+   <a  href="/incomeRegist" class="cp_link">収入入力</a>
+      <a  href="/detail" class="cp_link">履歴</a>
+      <a   href="/addcategory" class="cp_link">項目の追加</a>
+      
+      <a   href="/login" class="cp_link">ログアウト</a></div>
+
+
+<ul id="flip2" class="dropmenu">
+  <li><a href="#"><i class="fas fa-align-justify"> &nbsp;menu</i></a>
+    <ul>
+      <li><a  href="/outcomeRegist" >支出入力</a></li>
+      <li><a  href="/incomeRegist">収入入力</a></li>
+      <li><a  href="/detail">履歴</a></li>
+      <li><a   href="/addcategory">項目の追加</a></li>
+       <li><a   href="/top">home</a></li>
+      <li><a   href="/login">ログアウト</a></li>
+    </ul>
+  </li>
+</header>
+<h2>今月の収支</h2>
+
+ 
+<table style="margin:0 auto;"></table>
+<div class="glaf">
+<canvas id="mycanvas"  width="150" height="150" style="margin: 0 auto;" >
+</canvas>
+</div>
+<ul id="chart_legend"></ul>
+
+<div class="contents">
+<ul class="contents__ul">
+<li class="contents__li">収入合計
+<p class="income" th:text="${incometotal.#numbers.formatInteger(incometotal, 3, 'COMMA')} + '円'"></p>
+</li>
+
+<li class="contents__li_2">支出合計
+<p class="outcome" th:text="${outcometotal.#numbers.formatInteger(outcometotal, 3, 'COMMA')}+'円'"></p>
+</li>
+
+<li class="contents__li_3">毎月の目標予算
+<p th:text="${budgetTotal.#numbers.formatInteger(budgetTotal, 3, 'COMMA')}+'円'"></p>
+</li>
+<li class="contents__li_4">今月の残り予算
+<p th:text="${#numbers.formatInteger(budgetTotal+outcometotal,3, 'COMMA')}+'円'"></p>
+</ul>
+</div>
+
+
+<table class="content-table" border="1" style="border-collapse: collapse">
+ <thead>
+<tr>
+
+<th>日付</th>
+<th>項目</th>
+<th>収入</th>
+<th>支出</th>
+<th>メモ</th>
+<th>修正</th>
+<th>削除</th>
+
+</tr>
+ </thead>
+    <tbody>
+<tr th:each="h:${histories}" >
+<td class="date" width="500" height="50" th:text="${h.date}">
+<td th:value="${h.categoryid}">[[${h.categoryname}]]</td>
+ 
+ 
+<td><sapn class="income" th:if="${h.price>0}" style="color:rgb(0, 128, 255)">[[*{#numbers.formatInteger(h.price, 3, 'COMMA')}]]</sapn></td>
+
+<td><sapn 　class="expense" th:if="${h.price<0}" style="color:rgb(255, 0, 128)">[[*{#numbers.formatInteger(h.price*(-1), 3, 'COMMA')}]]</sapn></td>
+<td th:text="${h.memo}"></td>
+
+<td class="pic">
+<form th:action="'/history/edit/'+${h.id}" method="get">
+<button class="button">
+    <span class="icon is-small">
+     <i class="fas fa-edit"></i>
+    </span>
+  </button>
+</form>
+</td>
+
+<td>
+<form th:action="'/history/delete/'+${h.id}" method="get">
+ <button class="button">
+    <span class="icon is-small">
+      <i class="fas fa-trash-alt"></i>
+    </span>
+  </button>
+</form>
+</td>
+</tr>
+  </tbody>
+</table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script th:inline ="javascript">
+var data = [
+	 {
+	  value:/*[[${outcometotal}]]*/"outcometotal",
+	  color:"#F7464A",
+	  highlight: "#FF5A5E",
+	  label: "支出"
+	 },
+	 {
+	  value: /*[[${incometotal}]]*/"incometotal",
+	  color: "#46BFBD",
+	  highlight: "#5AD3D1",
+	  label: "収入"
+	 }
+	];
+
+	var myChart = new Chart(document.getElementById("mycanvas").getContext("2d")).Doughnut(data);
+</script>
+
+</body>
+</html>
