@@ -1,7 +1,7 @@
-insert into members(name,email,password,balance) values('小森田博','komorida@aaa.com','himitu',10000000);
-insert into members(name,email,password,balance) values('田口ひかり','tagichi@aaa.com','himitu',2000000);
-insert into members(name,email,password,balance) values('津川公康','tsugawa@aaa.com','himitu',30000000);
-insert into members(name,email,password,balance) values('栃原美穂','tochiwara@aaa.com','himitu',54000000);
+insert into members(name,email,password,balance) values('a','a@aaa.com','himitu',10000000);
+insert into members(name,email,password,balance) values('b','b@bbb.com','himitu',2000000);
+insert into members(name,email,password,balance) values('c','c@ccc.com','himitu',30000000);
+insert into members(name,email,password,balance) values('d','d@ddd.com','himitu',54000000);
 
 
 
@@ -19,14 +19,14 @@ insert into categories(name) values('交際費');
  
 
 
---小森田目標予算--
+--a目標予算--
 insert into budgets(member_id,category_id,price) values(1,4,30000);
 insert into budgets(member_id,category_id,price) values(1,5,7800);
 insert into budgets(member_id,category_id,price) values(1,6,5000);
 insert into budgets(member_id,category_id,price) values(1,7,8000);
 insert into budgets(member_id,category_id,price) values(1,8,48000);
 insert into budgets(member_id,category_id,price) values(1,9,20000);
---小森田4月収支--
+--a4月収支--
 insert into histories(member_id,category_id,price,date_at) values (1,1,235000,'2023-04-20');
 insert into histories(member_id,category_id,price,date_at) values (1,3,30000,'2023-04-24');
 insert into histories(member_id,category_id,price,date_at) values (1,3,543000,'2023-04-20');
@@ -47,7 +47,7 @@ insert into histories(member_id,category_id,price,date_at) values (1,9,-46098,'2
 insert into histories(member_id,category_id,price,date_at) values (1,9,-330,'2023-04-20');
 insert into histories(member_id,category_id,price,date_at) values (1,9,-8900,'2023-04-19');
 
---小森田5月収支--
+--a5月収支--
 insert into histories(member_id,category_id,price,date_at) values (1,4,-3500,'2023-05-02');
 insert into histories(member_id,category_id,price,date_at) values (1,4,-2870,'2023-05-07');
 insert into histories(member_id,category_id,price,date_at) values (1,1,235000,'2023-05-20');
@@ -70,7 +70,7 @@ insert into histories(member_id,category_id,price,date_at) values (1,4,-500,'202
 insert into histories(member_id,category_id,price,date_at) values (1,4,-560,'2023-05-22');
 
 
---小森田6月収支--
+--a6月収支--
 insert into histories(member_id,category_id,price,date_at) values (1,1,235000,'2023-06-20');
 insert into histories(member_id,category_id,price,date_at) values (1,3,30000,'2023-06-24');
 insert into histories(member_id,category_id,price,date_at) values (1,5,-10850,'2023-06-21');
@@ -91,7 +91,7 @@ insert into histories(member_id,category_id,price,date_at) values (1,9,-600,'202
 insert into histories(member_id,category_id,price,date_at) values (1,9,-19300,'2023-06-17');
 
 
---田口目標予算--
+--b目標予算--
 insert into budgets(member_id,category_id,price) values(2,4,15000);
 insert into budgets(member_id,category_id,price) values(2,5,9000);
 insert into budgets(member_id,category_id,price) values(2,6,6500);
@@ -204,7 +204,7 @@ insert into histories(member_id,category_id,price,date_at) values(2,2,600000,'20
 
 
 
---津川目標予算--
+--c目標予算--
 insert into budgets(member_id,category_id,price) values(3,4,50000);
 insert into budgets(member_id,category_id,price) values(3,5,13000);
 insert into budgets(member_id,category_id,price) values(3,6,14000);
@@ -338,7 +338,7 @@ INSERT into histories(member_id,category_id,price,date_at) values(3,4,-102000,'2
 INSERT into histories(member_id,category_id,price,date_at) values(3,4,-200,'2023-06-30');
 INSERT into histories(member_id,category_id,price,date_at) values(3,4,-1900,'2023-06-30');
 
---栃原目標予算--
+--d目標予算--
 insert into budgets(member_id,category_id,price) values(4,4,56000);
 insert into budgets(member_id,category_id,price) values(4,5,17000);
 insert into budgets(member_id,category_id,price) values(4,6,20000);
